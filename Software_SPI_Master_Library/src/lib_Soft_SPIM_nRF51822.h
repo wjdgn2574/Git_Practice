@@ -4,7 +4,7 @@
  Author      : wjdgn2574
  Version     : 1.0
  Copyright   :
- Description : Software SPI Master(Using GPIO) Library Header File
+ Description : Software SPI Master(Using GPIO) Library Example for nRF51822
  ============================================================================
 */
 
@@ -18,15 +18,17 @@
 #include <stdint.h>
 
 // Input target MCU SPI Function's Header File
-/* Here input Header Files */
+#include "custom_board.h"
+#include "nrf_gpio.h"
+#include "nrf_delay.h"
 
 /*******************************************************************************
  * Exported defines
  ******************************************************************************/
-#define M_SPI_CS		/* Here input gpio pin for CS */
-#define M_SPI_SCK		/* Here input gpio pin for SCK */
-#define M_SPI_MISO		/* Here input gpio pin for MISO */
-#define M_SPI_MOSI		/* Here input gpio pin for MOSI */
+#define M_SPI_CS		GPIO_PIN_16	// SPI Master - SCK
+#define M_SPI_SCK		GPIO_PIN_17	// SPI Master - MISO
+#define M_SPI_MISO		GPIO_PIN_18	// SPI Master - MOSI
+#define M_SPI_MOSI		GPIO_PIN_19	// SPI Master - CS
 
 /*******************************************************************************
  * Exported macros
