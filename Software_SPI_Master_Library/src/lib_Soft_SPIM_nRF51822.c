@@ -47,10 +47,10 @@
 void init_Soft_SPI_Master(void)
 {
 	/* Here input functions to init GPIO Pins */
-	nrf_gpio_cfg_output(SPI_CS_M0);							// CS	= Output Pin
-	nrf_gpio_cfg_output(SPI_SCK_M0);						// SCL	= Output Pin
-	nrf_gpio_cfg_output(SPI_MOSI_M0);						// MOSI	= Output Pin
-	nrf_gpio_cfg_input(SPI_MISO_M0, NRF_GPIO_PIN_PULLUP);	// MISO	= Input Pin
+	nrf_gpio_cfg_output(M_SPI_CS);							// CS	= Output Pin
+	nrf_gpio_cfg_output(M_SPI_SCK);						// SCL	= Output Pin
+	nrf_gpio_cfg_output(M_SPI_MOSI);						// MOSI	= Output Pin
+	nrf_gpio_cfg_input(M_SPI_MISO, NRF_GPIO_PIN_PULLUP);	// MISO	= Input Pin
 }
 
 void read_write_SPI_Master(unsigned char *tx, unsigned char *rx, int len_buffer)

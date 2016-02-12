@@ -25,10 +25,10 @@
 /*******************************************************************************
  * Exported defines
  ******************************************************************************/
-#define M_SPI_CS		GPIO_PIN_16	// SPI Master - SCK
-#define M_SPI_SCK		GPIO_PIN_17	// SPI Master - MISO
-#define M_SPI_MISO		GPIO_PIN_18	// SPI Master - MOSI
-#define M_SPI_MOSI		GPIO_PIN_19	// SPI Master - CS
+#define M_SPI_CS		16	// SPI Master - SCK
+#define M_SPI_SCK		17	// SPI Master - MISO
+#define M_SPI_MISO		18	// SPI Master - MOSI
+#define M_SPI_MOSI		19	// SPI Master - CS
 
 /*******************************************************************************
  * Exported macros
