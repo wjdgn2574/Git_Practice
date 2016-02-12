@@ -21,6 +21,7 @@
 /*******************************************************************************
  * Private define
  ******************************************************************************/
+#define BUFFER_SIZE	3
 
 /*******************************************************************************
  * Private macro
@@ -43,11 +44,16 @@
  ******************************************************************************/
 int main(void)
 {
-	printf("Software SPI Master Test Application \r\n");
+	uint8_t test_tx[BUFFER_SIZE] = {0x00, 0x01, 0x02};
+	uint8_t test_rx[BUFFER_SIZE] = {0x00, 0x00, 0x00};
 
-    while (true)
+	init_Soft_SPI_Master();
+
+	// printf("Software SPI Master Test Application \r\n");
+
+    while(true)
     {
-
+    	read_write_SPI_Master(test_tx, test_rx, BUFFER_SIZE);
     }
 }
 

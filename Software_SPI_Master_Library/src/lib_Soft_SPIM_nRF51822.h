@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : lib_Soft_SPIM.h
+ Name        : lib_Soft_SPIM_nRF51822.h
  Author      : wjdgn2574
  Version     : 1.0
  Copyright   :
@@ -8,8 +8,8 @@
  ============================================================================
 */
 
-#ifndef LIB_SOFT_SPIM_H_
-#define LIB_SOFT_SPIM_H_
+#ifndef LIB_SOFT_SPIM_NRF51822_H_
+#define LIB_SOFT_SPIM_NRF51822_H_
 
 /*******************************************************************************
  * Includes
@@ -33,19 +33,17 @@
 /*******************************************************************************
  * Exported macros
  ******************************************************************************/
-#define M_CS_SET		/* Here input function of bit 1 for CS */
-#define M_CS_CLEAR		/* Here input function of bit 0 for CS */
-#define M_SCL_SET		/* Here input function of bit 1 for SCL */
-#define M_SCL_CLEAR		/* Here input function of bit 0 for SCL */
-#define M_MOSI_SET		/* Here input function of bit 1 for MOSI */
-#define M_MOSI_CLEAR	/* Here input function of bit 0 for MOSI */
-#define M_MISO_SET		/* Here input function of bit 1 for MISO */
-#define M_MISO_CLEAR	/* Here input function of bit 0 for MISO */
+#define M_CS_SET		nrf_gpio_pin_set(SPI_CS_M0)
+#define M_CS_CLEAR		nrf_gpio_pin_clear(SPI_CS_M0)
+#define M_SCL_SET		nrf_gpio_pin_set(SPI_SCK_M0)
+#define M_SCL_CLEAR		nrf_gpio_pin_clear(SPI_SCK_M0)
+#define M_MOSI_SET		nrf_gpio_pin_set(SPI_MOSI_M0)
+#define M_MOSI_CLEAR	nrf_gpio_pin_clear(SPI_MOSI_M0)
+#define M_MISO_SET		nrf_gpio_pin_set(SPI_MISO_M0)
+#define M_MISO_CLEAR	nrf_gpio_pin_clear(SPI_MISO_M0)
 
-#define M_MOSI_READ		/* Here input function of reading bit for MOSI */
-#define M_MOSI_WRITE	/* Here input function of writing bit for MOSI */
-#define M_MISO_READ		/* Here input function of reading bit for MISO */
-#define M_MISO_WRITE	/* Here input function of writing bit for MISO */
+#define M_MOSI_READ		nrf_gpio_pin_read(SPI_MISO_M0)
+#define M_MISO_READ		nrf_gpio_pin_read(SPI_MOSI_M0)
 
 #define M_DELAY_MS(n)	/* Here input function of delay ms */
 
@@ -63,4 +61,4 @@
 void init_Soft_SPI_Master(void);
 void read_write_SPI_Master(unsigned char *tx, unsigned char *rx, int len_buffer);
 
-#endif /* LIB_SOFT_SPIM_H_ */
+#endif /* LIB_SOFT_SPIM_NRF51822_H_ */
